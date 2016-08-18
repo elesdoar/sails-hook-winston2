@@ -4,8 +4,8 @@
 [![Coverage Status](https://coveralls.io/repos/github/elesdoar/sails-hook-winston2/badge.svg?branch=master)](https://coveralls.io/github/elesdoar/sails-hook-winston2?branch=master)
 [![Dependency status](http://img.shields.io/david/elesdoar/sails-hook-winston2.svg?style=flat)](https://david-dm.org/elesdoar/sails-hook-winston2)
 [![Dev Dependencies Status](http://img.shields.io/david/dev/elesdoar/sails-hook-winston2.svg?style=flat)](https://david-dm.org/elesdoar/sails-hook-winston2#info=devDependencies)
-[![NPM Status](http://img.shields.io/npm/dm/sails-hook-winston.svg?style=flat)](https://www.npmjs.org/package/sails-hook-winston)
-[![Gittip](http://img.shields.io/gittip/Kikobeats.svg?style=flat)](https://www.gittip.com/Kikobeats/)
+[![NPM Status](http://img.shields.io/npm/dm/sails-hook-winston2.svg?style=flat)](https://www.npmjs.org/package/sails-hook-winston2)
+[![Gittip](http://img.shields.io/gittip/elesdoar.svg?style=flat)](https://www.gittip.com/elesdoar/)
 
 > Integrates winston logging system with your Sails application, based in [sails-hook-winston](https://github.com/Kikobeats/sails-hook-winston) by @Kikobeats.
 
