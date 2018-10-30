@@ -1,7 +1,9 @@
-import winston from 'winston';
+import { createLogger, format, transports } from 'winston';
 import captain from 'captains-log';
 import buildShipFn from 'sails/lib/hooks/logger/ship';
 import moment from 'moment';
+
+const { simple } = format;
 
 export default function (sails) {
   return {
@@ -13,27 +15,23 @@ export default function (sails) {
       let captainsOptions = sails.config.log;
       let consoleOptions = {
         level: sails.config.log.level,
-        formatter: sails.config.log.formatter || undefined,
-        colorize: sails.config.log.colorize || false,
-        prettyPrint: sails.config.log.prettyPrint || false,
-        timestamp: sails.config.log.timestamp || false,
-        json: sails.config.log.json || false,
-        stringify: sails.config.log.stringify || false,
-        depth: sails.config.log.depth || null,
-        humanReadableUnhandledException: sails.config.log.humanReadableUnhandledException || false,
-        showLevel: sails.config.log.showLevel !== undefined? sails.config.log.showLevel:true
+        format: sails.config.log.formatter || simple(),
+        // stringify: sails.config.log.stringify || false,
+        humanReadableUnhandledException:
+          sails.config.log.humanReadableUnhandledException !== undefined?
+            sails.config.log.humanReadableUnhandledException:true
       };
 
       // Console Transport
-      logger = new winston.Logger({
-        transports: [new winston.transports.Console(consoleOptions)],
+      logger = createLogger({
+        transports: [new transports.Console(consoleOptions)],
         levels: {
-          error: 1,
-          warn: 2,
-          debug: 3,
-          info: 4,
-          verbose: 5,
-          silly: 6
+          error: 0,
+          warn: 1,
+          debug: 2,
+          info: 3,
+          verbose: 4,
+          silly: 5
         }
       });
 

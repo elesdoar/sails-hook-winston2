@@ -33,12 +33,12 @@ describe('Basic tests', () => {
 
   it('Should follow sails default log level priority', () => {
     expect(sails.config.log.custom.levels).to.eql({
-      error: 1,
-      warn: 2,
-      debug: 3,
-      info: 4,
-      verbose: 5,
-      silly: 6
+      error: 0,
+      warn: 1,
+      debug: 2,
+      info: 3,
+      verbose: 4,
+      silly: 5
     });
   });
 });
