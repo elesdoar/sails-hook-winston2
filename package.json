@@ -1,7 +1,7 @@
 {
   "name": "sails-hook-winston2",
   "description": "Integrates winston logging system with your Sails application based in sails-hook-winston",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "license": "MIT",
   "main": "lib/index.js",
   "repository": "elesdoar/sails-hook-winston2",
