@@ -15,7 +15,7 @@ export default function (sails) {
       let captainsOptions = sails.config.log;
       let consoleOptions = {
         level: sails.config.log.level,
-        format: sails.config.log.formatter || simple(),
+        format: sails.config.log.format || simple(),
         // stringify: sails.config.log.stringify || false,
         humanReadableUnhandledException:
           sails.config.log.humanReadableUnhandledException !== undefined?
@@ -38,7 +38,7 @@ export default function (sails) {
       // Custom Transport
       // More information: https://github.com/winstonjs/winston/blob/master/docs/transports.md
       if (Object.prototype.toString.call(sails.config.log.transports) === '[object Array]' && sails.config.log.transports.length > 0) {
-        sails.config.log.transports.forEach(transport => logger.add(transport.module, transport.config || {}));
+        sails.config.log.transports.forEach(transport => logger.add(new transport.module(transport.config || {})));
       }
 
       sails.config.log.custom = logger;
